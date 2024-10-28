@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kayıt Ekranı</title>
+  </head>
+  <body style="font-family: Arial, sans-serif; max-width: 600px; margin: auto">
+    <h2 style="text-align: center; color: brown">Kitap Kayıt Formu</h2>
+    <form
+      action="kayit.php"
+      method="POST"
+      style="display: flex; flex-direction: column; gap: 15px"
+    >
+      <!-- Kitap Adı -->
+      <label for="txtAd">Kitap Adı:</label>
+      <input type="text" id="txtAd" name="kitap_adi" required />
+
+      <!-- Yazar Adı -->
+      <label for="txtYazar">Yazar Adı:</label>
+      <input type="text" id="txtYazar" name="yazar_adi" required />
+
+      <!-- Özet -->
+      <label for="taNot">Özet:</label>
+      <textarea id="taNot" name="ozet" cols="30" rows="5" required></textarea>
+
+      <!-- Stok Durumu -->
+      <fieldset>
+        <legend>Stok Durumu Seçiniz:</legend>
+        <label
+          ><input type="radio" name="stok" value="Var" required /> Stokta
+          Var</label
+        ><br />
+        <label><input type="radio" name="stok" value="Yok" /> Stokta Yok</label
+        ><br />
+        <label
+          ><input
+            type="radio"
+            name="stok"
+            value="Tedarik Süreci Devam Ediyor"
+          />
+          Tedarik Süreci Devam Ediyor</label
+        >
+      </fieldset>
+
+      <!-- Kategori -->
+      <fieldset>
+        <legend>Kategori Seçiniz:</legend>
+        <label
+          ><input type="checkbox" name="kategori[]" value="Macera" />
+          Macera</label
+        ><br />
+        <label
+          ><input type="checkbox" name="kategori[]" value="Fantastik Kurgu" />
+          Fantastik Kurgu</label
+        ><br />
+        <label
+          ><input type="checkbox" name="kategori[]" value="Romantik" />
+          Romantik</label
+        ><br />
+        <label
+          ><input type="checkbox" name="kategori[]" value="Diğer" />
+          Diğer</label
+        >
+      </fieldset>
+
+      <!-- Yayınevi Seçimi -->
+      <label for="sil">Yayınevi Seçiniz:</label>
+      <select id="sil" name="yayinevi" required>
+        <option value="">Seçiniz</option>
+        <option value="A Yayınevi">A Yayınevi</option>
+        <option value="B Yayınevi">B Yayınevi</option>
+        <option value="C Yayınevi">C Yayınevi</option>
+      </select>
+
+      <!-- Yayın Tarihi -->
+      <label for="yayin_tarihi">Yayın Tarihi Seçiniz:</label>
+      <input type="date" id="yayin_tarihi" name="yayin_tarihi" required />
+
+      <!-- Kaydet Butonu -->
+      <button
+        type="submit"
+        style="
+          padding: 10px;
+          background-color: brown;
+          color: white;
+          border: none;
+          cursor: pointer;
+        "
+      >
+        Kaydet
+      </button>
+    </form>
+  </body>
+</html>
